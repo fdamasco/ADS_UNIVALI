@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h> //Biblioteca para configurar o idioma em português
+
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese"); //Configura o idioma em português, possibilotando a acentuação
+    int num_decimal, num_binario, resto, quociente, dec_convertido, bin_convertido, opcao; //Declaração de variáveis
+
+   // MENU DA CALCULADORA
+   printf("\tCALCULADORA DE CONVERSÃO ENTRE SISTEMAS OPERACIONAIS!\n");
+   printf("\tESCOLHA A OPÇÃO DE CONVERSÃO:\n");
+   printf("\nDigite [1] para converter um número Decimal em Binário;\n");
+   printf("Digite [2] para converter um número Binário em Decimal; ou\n");
+   printf("Digite [3] para sair.\n");
+   printf("Opcão escolhida: ");
+   scanf("%i", &opcao); //Armazena a variável OPCAO
+   switch(opcao) { //Estrutura de seleção switch
+       case 1: //Opção 1: conversão de decimal para binário
+           printf("A opcão escolhida foi: %i - Conversão de número Decimal em Binário.\n", opcao);
+           printf("Digite um número em Decimal:\n");
+           scanf("%i", &num_decimal); //Armazena a variável NUM_DECIMAL
+           break;
+       case 2: //Opção 2: conversão de binário para decimal
+           printf("A opcão escolhida foi: %i - Conversão de número Binário em Decimal.\n", opcao);
+           printf("Digite um número em Binário:\n");
+           scanf("%i", &num_binario); //Armazena a variável NUM_BINARIO
+           break;
+       case 3: //Opção (restante) 3: sair da calculadora
+           printf("A opcão escolhida foi sair.\n");
+           printf("Até a próxima!");
+           break;
+       default: //Quando o usuário digitar um número não previsto
+           printf("Você digitou um valor inválido");
+   }
+   return 0;
+}
