@@ -32,7 +32,7 @@ int main()
            printf("Até a próxima!");
            break;
        default: //Quando o usuário digitar um número não previsto
-           printf("Você digitou um valor inválido");
+           printf("Você digitou um valor inválido!");
    }
    return 0;
 }
