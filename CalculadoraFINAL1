@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h> //Biblioteca para inserir acentuação
+#include <math.h> //Biblioteca para função pow
+
+int  Conversor(long long num_binario); //Função de conversão de binário em decimal
+
+int main()
+{
+setlocale(LC_ALL, "Portuguese"); //Habilita acentuação
+//VARIÁVEIS
+int num_decimal, bin_decimal, opcao, resto, contador;
+char dec_binario[64];
+long long num_binario;
+
+do{
+
+    // MENU DA CALCULADORA
+   printf("\tCALCULADORA DE CONVERSÃO ENTRE SISTEMAS OPERACIONAIS!\n");
+   printf("\tESCOLHA A OPÇÃO DE CONVERSÃO:\n");
+   printf("\nDigite [1] para converter um número Decimal em Binário;\n");
+   printf("Digite [2] para converter um número Binário em Decimal; ou\n");
+   printf("Digite [3] para sair.\n");
+   printf("Opcão escolhida: ");
+   scanf("%i", &opcao); //Armazena a variável OPCAO
+   switch(opcao) { //Estrutura de seleção switch
+
+       case 1: //Opção 1: conversão de decimal para binário
+           printf("\nA opcão escolhida foi: %i - Conversão de número Decimal em Binário.\n", opcao);
+           printf("\nDigite um número em Decimal:\n");
+           scanf("%d", &num_decimal); //Armazena a variável numerodec
+           printf("\nNúmero Binário: \n");
+           itoa(num_decimal, dec_binario, 2);
+           printf("%s\n\n", dec_binario);
+           break;
+
+       case 2: //Opção 2: conversão de binário para decimal
+           printf("\nA opcão escolhida foi: %i - Conversão de número Binário em Decimal.\n", opcao);
+           printf("\nDigite um número em Binário:\n");
+           scanf("%lld", &num_binario);
+           printf("Número Decimal: %d\n\n", Conversor(num_binario));
+           break;
+
+       case 3: //Opção (restante) 3: sair da calculadora
+           break;
+       default: //Quando o usuário digitar um número não previsto
+           printf("\nVocê digitou um valor inválido");
+           printf("\n\n\n");
+   }
+
+} while (opcao!=3);
+    printf("\nClique em qualquer tecla para sair.");
+    printf("\nAté a próxima!");
+    printf("\n\n\n");
+
+   return 0;
+}
+
+int Conversor (long long num_binario)
+{
+    int bin_decimal = 0, contador = 0, resto;
+
+    //Enquanto existir valor no binário
+    while (num_binario!=0){//Enquanto o número binário for diferente de 0
+               resto=num_binario%10;
+               num_binario = num_binario/10;
+               bin_decimal=bin_decimal+resto*pow(2,contador);
+               contador++;
+           }
+            if (num_binario=0) // Se o número binário informado for igual a zero, o binário também será.
+            bin_decimal=0;
+
+    return bin_decimal;
+}
