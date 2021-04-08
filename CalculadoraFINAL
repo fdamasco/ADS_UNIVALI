@@ -7,10 +7,11 @@ int main()
 {
 setlocale(LC_ALL, "Portuguese"); //Habilita acentuação
 //VARIÁVEIS GLOBAIS:
-int num_decimal, num_binario, opcao, resto, bin_dec=0; //Declaração de variáveis
+int num_decimal, opcao, resto, bin_dec=0; //Declaração de variáveis
 int dec_bin[64]; //Vetor referente ao número binário em 64 bits
 int i=0; //Contador do vetor dec_bin[]
 int j=0; // Variável do contador da potência de 2
+long long num_binario;
 
 do{
 
@@ -47,19 +48,20 @@ do{
            printf("\nA opcão escolhida foi: %i - Conversão de número Binário em Decimal.\n", opcao);
            printf("\nDigite um número em Binário:\n");
            printf("\nNúmero Binário: ");
-           scanf("%i", &num_binario); //Armazena a variável NUM_BINARIO
+           scanf("%lld", &num_binario); //Armazena a variável NUM_BINARIO
            printf("\nNúmero Decimal: ");
-           while (num_binario !=0){//Enquanto o número binário for diferente de 0
+           while (num_binario!=0){//Enquanto o número binário for diferente de 0
                resto=num_binario%10;
                bin_dec=bin_dec+resto*pow(2,j);
                j++;
                num_binario = num_binario/10;
            }
-            printf("%i", bin_dec);
+            printf("%d", bin_dec);
             if (num_binario=0) // Se o número binário informado for igual a zero, o binário também será.
             printf("%d", bin_dec);
             printf("\n\n\n");
            break;
+
        case 3: //Opção (restante) 3: sair da calculadora
            break;
        default: //Quando o usuário digitar um número não previsto
@@ -74,4 +76,3 @@ do{
 
    return 0;
 }
-
