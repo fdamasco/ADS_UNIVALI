@@ -75,7 +75,7 @@ if (num_decimal==0) { //Se o número decimal for igual a zero, o número binári
            num_decimal = num_decimal/2; // Divide-se o número decimal por 2, e inicia o próximo loop
            i++; //Incremento do contador do vetor
            }
-        for (i=i-1; i>=0; i--){//Decremento do vetor do máximo a 0, possibilitando a impressão dos restos de trás para frente, formando o número binário
+        for (i=i-1; i>=0; i--){//Decremento do vetor do máximo a 0, possibilitando a impressão dos restos da direita para a esquerda, formando o número binário
                printf("%d", dec_binario[i]);
             }
          printf("\n\n\n");
