@@ -85,12 +85,12 @@ if (num_decimal==0) { //Se o número decimal for igual a zero, o número binári
 void conversaoBinDec (char num_binario[64]) //Função conversão decimal-binário
 {
     int bin_decimal=0, j=0;
-    for (j=0; j<strlen(num_binario); j++)//Laço de repetição para validar apenas valores binários.
+    for (j=0; j<strlen(num_binario); j++)//Laço de repetição para validar apenas valores binários
     if(num_binario[j]!='1' && num_binario[j]!= '0') { //Se o número digitado for diferente de 1 e 0, imprime que o número não é binário na tela
         printf("Você não digitou um número Binário!\n\n\n");
         return; //Finaliza o laço
     }
-    for (j=strlen(num_binario)-1; j>=0; j--) //Laço de repetição para obter o número em binário, analisando o número de trás para frente
+    for (j=strlen(num_binario)-1; j>=0; j--) //Laço de repetição para obter o número em binário, analisando o número da direita para a esquerda
         if (num_binario[j]=='1') //Quando houver o valor 1
         bin_decimal=bin_decimal+1*pow(2,strlen(num_binario)-1-j); //Efetua o cálculo
         printf("Número Decimal:\n%d\n\n\n", bin_decimal);
