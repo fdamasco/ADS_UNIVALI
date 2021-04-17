@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h> //Biblioteca para inserir acentuação
-#include <math.h> //Biblioteca matemática para possibilitar a função pow
+#include <locale.h> //Biblioteca do idioma na língua portuguesa
+#include <math.h> //Biblioteca que habilita funções matemáticas presentes no código
 #include <string.h> //Biblioteca para habilitar função strlen para saber o tamanho de uma string
 
 void conversaoDecBin(int num_decimal); //Função de conversão de decimal para binário
@@ -14,7 +14,7 @@ char num_binario[64];
 
 int main()
 {
-setlocale(LC_ALL, "Portuguese"); //Habilita acentuação
+setlocale(LC_ALL, "Portuguese"); //Habilita língua portuguesa
 
 do{ //Laço de repetição do menu
 
