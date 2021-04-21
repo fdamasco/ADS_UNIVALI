@@ -25,7 +25,7 @@ do{ //Laço de repetição do menu
    printf("Digite [2] para converter um número Binário em Decimal; ou\n");
    printf("Digite [3] para sair.\n");
    printf("Opcão escolhida: ");
-   scanf("%i", &opcao); //Armazena a variável OPCAO
+   scanf("%d", &opcao); //Armazena a variável OPCAO
    switch(opcao) { //Estrutura de seleção switch
 
        case 1: //Opção 1: conversão de decimal para binário
