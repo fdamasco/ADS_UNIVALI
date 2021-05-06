@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h> //Biblioteca para inserir acentuação
-#include <math.h> //Biblioteca matemática para possibilitar a função pow
+#include <locale.h> //Biblioteca do idioma na língua portuguesa
+#include <math.h> //Biblioteca que habilita funções matemáticas presentes no código
 #include <string.h> //Biblioteca para habilitar função strlen para saber o tamanho de uma string
 
 void conversaoDecBin(int num_decimal); //Função de conversão de decimal para binário
@@ -14,7 +14,7 @@ char num_binario[64];
 
 int main()
 {
-setlocale(LC_ALL, "Portuguese"); //Habilita acentuação
+setlocale(LC_ALL, "Portuguese"); //Habilita língua portuguesa
 
 do{ //Laço de repetição do menu
 
@@ -25,7 +25,7 @@ do{ //Laço de repetição do menu
    printf("Digite [2] para converter um número Binário em Decimal; ou\n");
    printf("Digite [3] para sair.\n");
    printf("Opcão escolhida: ");
-   scanf("%i", &opcao); //Armazena a variável OPCAO
+   scanf("%d", &opcao); //Armazena a variável OPCAO
    switch(opcao) { //Estrutura de seleção switch
 
        case 1: //Opção 1: conversão de decimal para binário
@@ -75,11 +75,11 @@ if (num_decimal==0) { //Se o número decimal for igual a zero, o número binári
            num_decimal = num_decimal/2; // Divide-se o número decimal por 2, e inicia o próximo loop
            i++; //Incremento do contador do vetor
            }
-        for (i=i-1; i>=0; i--){//Decremento do vetor do máximo a 0, possibilitando a impressão dos restos de trás para frente, formando o número binário
+        for (i=i-1; i>=0; i--){//Decremento do vetor do máximo a 0, possibilitando a impressão dos restos da direita para a esquerda, formando o número binário
                printf("%d", dec_binario[i]);
             }
          printf("\n\n\n");
-         return; //Finaliza loop
+         return; //Finaliza laço
         }
 }
 void conversaoBinDec (char num_binario[64]) //Função conversão decimal-binário
@@ -90,9 +90,9 @@ void conversaoBinDec (char num_binario[64]) //Função conversão decimal-binár
         printf("Você não digitou um número Binário!\n\n\n");
         return; //Finaliza o laço
     }
-    for (j=strlen(num_binario)-1; j>=0; j--) //Laço de repetição para obter o número em binário, analisando o da direita para a esquerda
+    for (j=strlen(num_binario)-1; j>=0; j--) //Laço de repetição para obter o número em binário, analisando o número da direita para a esquerda
         if (num_binario[j]=='1') //Quando houver o valor 1
         bin_decimal=bin_decimal+1*pow(2,strlen(num_binario)-1-j); //Efetua o cálculo
         printf("Número Decimal:\n%d\n\n\n", bin_decimal);
-        return;
+        return; //Finaliza o laço
 }
